@@ -2,6 +2,7 @@ package de.lundy.pinnerino;
 
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import org.jetbrains.annotations.NotNull;
 
 public class SettingsCommand extends ListenerAdapter {
@@ -13,14 +14,11 @@ public class SettingsCommand extends ListenerAdapter {
             return;
         }
 
+        // TODO figure this out
         if (event.getName().equalsIgnoreCase("pinsettings")) {
 
-            //event.get
-
-            String webhookUrl = event.getOption("webhook").getAsString();
-            //int amount = event.getOption("amount").getAsInt();
-
-            event.reply(webhookUrl).queue();
+            OptionMapping webhook = event.getOption("webhook");
+            OptionMapping amount = event.getOption("amount");
 
         }
 
